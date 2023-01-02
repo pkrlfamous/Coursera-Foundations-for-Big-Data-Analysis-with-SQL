@@ -1,0 +1,101 @@
+Database Overview
+
+Your Name
+2020-August-23
+==============
+
+Database: fun
+
+Notes:
+1. Column and table descriptions are estimates based on examination of the
+tables, not descriptions from the data sources.
+2. Column description of PK are descriptions of assumed relationship between tables
+not from the database constraints.
+==============
+
+Tables:
+    card_rank 		Rank of the cards		
+    card_suit 		Categories into which the cards of a deck are divided
+    games 		Games and its information
+    inventory		List of the games and the shop where the games are available
+===============
+
+Table: card_rank
+
+Columns
+1	rank 	string 	PK*
+
+2 	value 	tinyint small integer value
+
+
+Sample
+	rank	value
+1 	Ace 	NULL
+2 	2	2
+3	3	3
+=================
+
+
+Table:	card_suit
+
+Columns
+1 		suit 	string 	PK, suits of the cards
+
+2 		color 	string 	color of the card
+
+Sample
+	suit		color
+1 	Clubs 		Black
+2 	Diamonds 	Red
+3 	Hearts 		Red
+4 	Spades 		Black
+===================
+
+Table:	games
+
+Columns
+1 	id 		int 		PK*	
+	
+2 	name 		string 		Name of the game
+
+3	inventor 	string 		Inventor of the game
+
+4 	year 		string 		Year of the invention
+
+5 	min_age 	tinyint 	Minimum age required to play the game
+
+6 	min_players 	tinyint 	Minimum number of players to play the game	
+
+7	max_players 	tinyint 	Maximum number of players that can play the game
+
+8 	list_price 	decimal(5,2) 	Price for the game
+
+
+Sample
+id    name 	  inventor             year 	min_age  min_players  max_players  list_price
+1     Monopoly 	  Elizabeth Magie      1903 	8 	2 	        6 	   19.99
+2     Scrabble 	 Alfred Mosher Butts    1938 	8 	2 		4 	   17.99
+3     Clue 	  Anthony E. Pratt 	1944 	8 	2 		6          9.99	
+=================
+
+Table:	inventory
+
+Columns
+1 	shop 	string 		name of the shop where the game can be played
+
+2	game 	string 		name of the game
+
+3 	qty 	int 		integer, quantity of the game can be played
+
+4 	aisle 	tinyint 	integer
+
+5 	price 	decimal(5,2) 	price for the game 
+
+
+Sample
+ 	shop 		game 		qty 	aisle 	price
+1 	Dicey 		Monopoly 	7 	3 	17.99
+2 	Dicey 		Clue 		3 	NULL 	9.99
+3 	Board 'Em 	Monopoly 	11 	2 	25.00
+
+
